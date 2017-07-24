@@ -8,12 +8,19 @@ var mHttp = require("http");
 var iPort = 8081;
 var sMessage = "HelloWorld";
 
+var oResponse = {
+    "returnCode" : "1",
+    "returnMessage" : "Everything OK",
+    "returnData" : null
+};
+
+
 // create Http Server
 var oServer = mHttp.createServer(function(req, res){
     console.log("\r\nRequest received");
 
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.write(sMessage);
+    res.writeHead(200, {'Content-Type': 'application/json'});
+    res.write(JSON.stringify(oResponse));
     res.end;
 
     console.log("Response sent !");
