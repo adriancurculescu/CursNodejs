@@ -24,7 +24,7 @@ describe("passwordValidator", function () {
             //test with good value
             var goodPass = "12345678";
             var valid2 = passwordValidator.validPassword(goodPass);
-            chai.expect(valid).to.be.equal(true);
+            chai.expect(valid2).to.be.equal(true);
 
         });
 
@@ -35,10 +35,10 @@ describe("passwordValidator", function () {
 
             //implementetion test with known wrong value
             var wrongPass = "password1";
-            var valid2 = passwordValidator.validPassword(wrongPass);
+            var valid1 = passwordValidator.validPassword(wrongPass);
             
             //chai check
-            chai.expect(valid2).to.be.equal(false);
+            chai.expect(valid1).to.be.equal(false);
 
 
             //test with good value
