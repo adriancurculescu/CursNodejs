@@ -1,0 +1,19 @@
+{
+  "name": "unittestexample",
+  "version": "1.0.0",
+  "description": "Unit Test example",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node ./index.js"
+  },
+  "keywords": [
+    "unit",
+    "test"
+  ],
+  "author": "Adi",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.1.0"
+  }
+}
