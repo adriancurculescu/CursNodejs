@@ -1,0 +1,11 @@
+{
+  "name": "eventsexample",
+  "version": "1.0.0",
+  "description": "Events example (tutorial point)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adi",
+  "license": "ISC"
+}
