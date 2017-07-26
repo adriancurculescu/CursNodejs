@@ -6,8 +6,21 @@ var express = require('express');
 var mongo = require('mongodb');
 var uuidv4 = require('uuid/v4');
 
+//mongo client instance
+var MongoClient = mongo.MongoClient;
+
+// config via module
+var config = require("./modules/config");
+var MongoUrl = config.mongoUrl; 
+// "mongodb://user:userpass@ds055862.mlab.com:55862/trainingnodejs"
+
 var mProducts = require('./modules/products');
+mProducts.config.mongoClient = mongoClient;
+mProducts.config.mongoUrl = mongoUrl;
+
 var mOrders = require('./modules/orders');
+mOrders.config.mongoClient = mongoClient;
+mOrders.config.mongoUrl = mongoUrl;
 
 var app = express();
 
@@ -29,7 +42,9 @@ var app = express();
 
     //get list
     app.get('/products', function (req, res) {
-        res.end();
+        var products = mProducts.listProducts();
+        res.writeHead(200, {'Content-Type': 'application/json'});
+        res.end(JSON.stringify(products));
     });
 
     //delete

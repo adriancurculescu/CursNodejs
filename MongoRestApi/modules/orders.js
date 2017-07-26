@@ -1,5 +1,11 @@
 
 
+exports.config = module.exports.config = {
+    mongoClient : null,
+    mongoUrl : ""
+}
+
+
 exports.createOrder = module.exports.createOrder = function createOrder() {
     console.log("Orders createOrder");
 };
